@@ -1,7 +1,7 @@
 import socket
 import struct
 
-class sACNServer:
+class E131Server:
     def __init__(self, universe = 1):
         self.universe = universe
         self.last_sequence = -1

@@ -4,7 +4,7 @@ import network
 import plasma
 from config import *
 from colorsys import hsv_to_rgb
-from sacn import sACNServer
+from e131 import E131Server
 
 rp2.country(COUNTRY)
 
@@ -41,7 +41,7 @@ while not nic.isconnected():
 
 print('Connected!')
 
-server = sACNServer()
+server = E131Server()
 server.bind('0.0.0.0', 5568)
 
 while nic.isconnected():
