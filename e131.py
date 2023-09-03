@@ -2,6 +2,12 @@ import socket
 import struct
 
 class E131Server:
+    '''
+    Barebones E1.31 server.
+    Parses incoming packets and returns the DMX channel values.
+    Does not implement packet priority or universe synchronization.
+    '''
+
     def __init__(self, universe = 1):
         self.universe = universe
         self.last_sequence = -1
