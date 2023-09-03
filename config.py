@@ -1,0 +1,7 @@
+NUM_LEDS = 1
+RGBW = True
+POWER_LIMIT = 0.67
+FPS = 30
+COUNTRY = 'DE'
+SSID = ''
+PSK = ''
