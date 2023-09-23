@@ -9,7 +9,9 @@ from e131 import E131Server
 rp2.country(COUNTRY)
 
 nic = network.WLAN(network.STA_IF)
-nic.active(True)
+nic.config(pm=network.WLAN.PM_NONE)
+if not nic.active():
+    nic.active(True)
 if not nic.isconnected():
     nic.connect(SSID, PSK)
 
@@ -23,7 +25,6 @@ def set_color(r, g, b, w=0):
     g = int(g * POWER_LIMIT)
     b = int(b * POWER_LIMIT)
     w = int(w * POWER_LIMIT)
-    #print(f'R: {r}, G: {g}, B: {b}, W: {w}')
     led_strip.set_rgb(0, r, g, b, w)
 
 hue = 0.0
@@ -51,4 +52,5 @@ while nic.isconnected():
         g = dmx[1]
         b = dmx[2]
         w = dmx[3]
+        print(f'R: {r}, G: {g}, B: {b}, W: {w}')
         set_color(r, g, b, w)
